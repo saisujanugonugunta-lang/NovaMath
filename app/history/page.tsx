@@ -1,0 +1,1 @@
+export default function Page(){return <main className="page"><div className="container"><div className="pagehead"><h1>History</h1><p>Your NovaMath history workspace.</p></div><div className="panel"><h2>Nothing here yet</h2><p className="sectionlead">This page is ready for persistent history storage and user preferences.</p></div></div></main>}

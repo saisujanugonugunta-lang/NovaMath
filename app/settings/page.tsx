@@ -1,0 +1,1 @@
+export default function Page(){return <main className="page"><div className="container"><div className="pagehead"><h1>Settings</h1><p>Your NovaMath settings workspace.</p></div><div className="panel"><h2>Nothing here yet</h2><p className="sectionlead">This page is ready for persistent settings storage and user preferences.</p></div></div></main>}

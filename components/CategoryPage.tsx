@@ -1,0 +1,15 @@
+import Link from 'next/link'; import {categories} from '../lib/data';
+const details:Record<string,string[]>= {
+'/algebra':['Linear equations','Quadratic equations','Cubic equations','Simultaneous equations','Polynomial calculator','Factorization','Simplification','Expansion','Inequalities','Arithmetic progression','Geometric progression'],
+'/geometry':['Triangle','Square','Rectangle','Circle','Trapezium','Parallelogram','Polygon','Coordinate geometry','Distance between points','Midpoint','Slope','Area & perimeter','Surface area & volume'],
+'/trigonometry':['sin','cos','tan','cot','sec','cosec','Inverse functions','Degrees / radians','Identities','Triangle solver','Law of sines','Law of cosines'],
+'/calculus':['Limits','Differentiation','Integration','Definite integrals','Indefinite integrals','Partial derivatives','Higher derivatives','Differential equations'],
+'/matrices':['Matrix addition','Matrix subtraction','Matrix multiplication','Transpose','Determinant','Inverse','Rank','Trace','Eigenvalues','Eigenvectors','Linear systems','Gaussian elimination'],
+'/statistics':['Mean','Median','Mode','Range','Variance','Standard deviation','Quartiles','Percentiles','Frequency tables','Data analysis'],
+'/probability':['Basic probability','Conditional probability','Bayes theorem','Permutations','Combinations','Expected value','Probability distributions'],
+'/complex-numbers':['Addition','Subtraction','Multiplication','Division','Modulus','Argument','Polar form','Euler form','De Moivre theorem'],
+'/number-theory':['Prime checker','Prime factorization','GCD','LCM','Modular arithmetic','Divisibility','Remainders'],
+'/vectors':['Vector addition','Vector subtraction','Dot product','Cross product','Magnitude','Unit vector','Angle between vectors'],
+'/engineering-math':['Laplace transforms','Inverse Laplace transforms','Fourier series','Fourier transforms','Differential equations','Newton-Raphson','Bisection method','Interpolation','Vector calculus'],
+};
+export default function CategoryPage({path}:{path:string}){const c=categories.find(x=>x[2]===path);const list=details[path]||['Addition','Subtraction','Multiplication','Division','Percentage','Fractions','Decimals','Ratio & proportion','Average','HCF','LCM','Prime numbers','Factors','Scientific notation'];return <main className="page"><div className="container"><div className="pagehead"><h1>{c?.[0]||'Mathematics'}</h1><p>{c?.[1]||'Explore useful mathematical tools.'}</p></div><div className="grid">{list.map((x,i)=><div className="card" key={x}><div className="cardicon">{i+1}</div><h3>{x}</h3><p>Open this calculator to enter values, calculate results and review the method.</p></div>)}</div><div className="panel" style={{marginTop:22}}><h2>Smart Solver</h2><p className="sectionlead">Use the universal solver on the home page for supported expressions, or build this module out with symbolic solving APIs.</p><Link href="/" className="primary" style={{display:'inline-block',padding:'12px 18px',textDecoration:'none'}}>Open NovaMath Solver</Link></div></div></main>}
